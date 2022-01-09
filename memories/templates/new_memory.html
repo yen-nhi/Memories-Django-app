@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block script %}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="{% static 'javascripts/new_memory.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<form class="new-memory-form", method="post">
+    {% csrf_token %}
+    <h4>NEW MEMORY</h4>
+    <br>
+    
+    <div class="mb-3">
+        <input type="text" class="form-control" name="name" placeholder="Name" required>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" name="comment" rows="3" placeholder="Comment..." required></textarea>
+    </div>
+
+    <input type="hidden" name="lat" id="lat" value="0"/>
+    <input type="hidden" name="long" id="long" value="0"/>
+
+    <p>Choose a location</p>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9CmXgMwJ0Ffz9fRW2Sthq4m5N0Xy7-RI&callback=initMap&v=weekly"
+      async
+    ></script>
+    <small style="color: red;">{{ error }}</small>
+    <div class="save-button">
+        <button type="submit" class="btn btn-outline-primary">SAVE</button>
+    </div>
+</form>
+{% endblock %}
+
+<head>
+    <title>Accessing Arguments in UI Events</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>

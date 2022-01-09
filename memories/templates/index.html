@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <div class="memories">
+        {% if not memories %}
+                <p>YOU HAVE NO MEMORIES</p>
+        {% else %}
+            <h4>YOUR MEMORIES</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Comment</th>
+                            <th scope="col">Place</th>
+                        </tr>
+                    </thead>
+                </table class="table">
+
+                <div class="memories-table">
+                    <table class="table">
+                        <tbody>
+                        {% for item in memories %}
+                            <tr>
+                                <td>{{ item.name }}</th>
+                                <td>{{ item.comment }}</td>
+                                <td>{{ item.location}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>   
+                </div> 
+         
+        {% endif %}
+        <div class="add-memory">
+            <a href="{% url 'new_memory' %}"><button type="button" class="btn btn-outline-primary">ADD A MEMORY</button></a>
+        </div>
+    </div>
+    {% else %}      
+        <div class="card text-center index">
+            <div class="card-body">
+                <h5 class="card-title">Where you can save your valuable memories.</h5>
+                <p class="card-text">Where have you been and what have you done? We would like to share with you.</p>
+                <br><br>
+                <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary">
+                    <img src="{% static 'icons/facebook.png' %}" alt="fb icon" width="35"/>
+                    Log in with Facebook
+                </a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
