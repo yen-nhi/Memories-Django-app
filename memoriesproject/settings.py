@@ -151,3 +151,7 @@ SOCIAL_AUTH_PIPELINE = (
 LOGIN_REDIRECT_URL = '/'
 
 SECURE_SSL_REDIRECT = True
+
+#Automatic configuration with django-heroku
+import django_heroku
+django_heroku.settings(locals())
