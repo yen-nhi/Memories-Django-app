@@ -19,8 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$xuh%su45e&+8qql35-@&1-ujplc@&8mirb8@+nj96#za0q#oi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -131,9 +129,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# Facebook Oauth2
-SOCIAL_AUTH_FACEBOOK_KEY = '2016346311880337'
-SOCIAL_AUTH_FACEBOOK_SECRET = '1496c9a4b0b6caf4304d199feab01ae8'
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
