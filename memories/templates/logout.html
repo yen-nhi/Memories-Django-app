@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <body>
-        <div class="greeting" style="margin: 10rem; text-align: center;">
-            <h3>You account has been logged out</h3>
-            <h2>See you again soon</h2>    
-            <a href="{% url 'index' %}">Login again?</a>
+    <body style="background-image: linear-gradient(to bottom right, white, skyblue); height: 100vh;">
+        <div class="greeting" style="text-align: center; margin-top: 10rem;">
+            <div style="border: darkblue dashed 1px; padding: 2rem;">
+                <h3>You account has been logged out</h3>
+                <h2>See you again soon</h2>    
+                <a href="{% url 'index' %}">Login again?</a>          
+            </div>
         </div>
     </body>
