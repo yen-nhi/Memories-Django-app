@@ -11,7 +11,11 @@ def create_memory(user, memo_name, comment, lat, long):
 
         #Use geopy to find the city, country from latitude and longtitude
         geolocator = Nominatim(user_agent="geoapiExercises")
-        location = geolocator.reverse(lat + "," + long, language='en')
+        try:
+            location = geolocator.reverse(lat + "," + long, language='en')
+        except:
+            location = None
+            
         if location is not None:
             place = location.raw['address']
             address = []
