@@ -1,7 +1,9 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import logout
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 from .bl import create_memory, fetch_memories, get_avatar
 
 def index(request):
@@ -15,10 +17,12 @@ def index(request):
         })
     return render(request, 'index.html')
 
+@login_required
 def logout_view(request):
     logout(request)
     return render(request, 'logout.html')
 
+@login_required
 def new_memory(request):
     err = ''
     user = request.user
