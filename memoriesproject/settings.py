@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'memories',
     'social_django',
     'sslserver',
-    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
