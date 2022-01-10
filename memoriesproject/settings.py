@@ -154,3 +154,5 @@ LOGIN_REDIRECT_URL = '/'
 import django_heroku
 django_heroku.settings(locals())
 
+SOCIAL_AUTH_FACEBOOK_KEY='2016346311880337'
+SOCIAL_AUTH_FACEBOOK_SECRET='1496c9a4b0b6caf4304d199feab01ae8'
