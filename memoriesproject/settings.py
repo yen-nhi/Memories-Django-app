@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -151,8 +152,8 @@ SOCIAL_AUTH_PIPELINE = (
 import django_heroku
 django_heroku.settings(locals())
 
-SOCIAL_AUTH_FACEBOOK_KEY='2016346311880337'
-SOCIAL_AUTH_FACEBOOK_SECRET='1496c9a4b0b6caf4304d199feab01ae8'
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
 
 LOGIN_REDIRECT_URL = '/'
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
