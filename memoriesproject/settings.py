@@ -147,12 +147,12 @@ SOCIAL_AUTH_PIPELINE = (
     'memories.pipeline.save_profile'
 )
 
-LOGIN_REDIRECT_URL = '/'
-
-
 #Automatic configuration with django-heroku
 import django_heroku
 django_heroku.settings(locals())
 
 SOCIAL_AUTH_FACEBOOK_KEY='2016346311880337'
 SOCIAL_AUTH_FACEBOOK_SECRET='1496c9a4b0b6caf4304d199feab01ae8'
+
+LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
