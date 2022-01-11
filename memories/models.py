@@ -12,7 +12,7 @@ class Memory(models.Model):
     name = models.CharField(max_length=150)
     comment = models.CharField(max_length=150)
     time = models.DateTimeField(auto_now_add=True)
-    location = models.CharField(max_length=35)
+    location = models.CharField(max_length=100)
     def serialize(self):
         return {
             'username': self.user.username,
