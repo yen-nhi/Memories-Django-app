@@ -12,11 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-# import environ
-
-# env = environ.Env()
-# # reading .env file
-# environ.Env.read_env()
 
 #Django Secret key
 SECRET_KEY = os.environ.get("SECRET_KEY")
@@ -166,4 +161,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
 LOGIN_REDIRECT_URL = '/'
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
-CSRF_TRUSTED_ORIGINS=['https://memories-saritasa.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://memories-saritasa.herokuapp.com', 
+                        'https://localhost:8000',
+                        'https://127.0.0.1:8000/'
+]
