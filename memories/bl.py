@@ -32,7 +32,7 @@ def create_memory(user, memo_name, comment, lat, long):
                         pass
                 address.append(country)
             except KeyError:
-                address = 'Unknown'
+                address = ['Unknown']
 
             Memory.objects.create(
                 user=user, 
