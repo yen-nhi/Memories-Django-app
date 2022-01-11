@@ -166,5 +166,4 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
 LOGIN_REDIRECT_URL = '/'
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
-CSRF_COOKIE_SECURE=False
-CSRF_TRUSTED_ORIGINS=['https://memories-saritasa.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS=['https://memories-saritasa.herokuapp.com']
