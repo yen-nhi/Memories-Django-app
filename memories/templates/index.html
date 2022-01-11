@@ -5,37 +5,44 @@
     {% if user.is_authenticated %}
         <div class="memories">
         {% if not memories %}
+            <div class="message">
                 <p>YOU HAVE NO MEMORIES</p>
+                <a href="{% url 'new_memory' %}">
+                    <button type="button" class="btn btn-outline-primary">
+                        ADD A MEMORY
+                    </button>
+                </a>
+            </div>
         {% else %}
             <h4>YOUR MEMORIES</h4>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Title</th>
-                            <th scope="col">Comment</th>
-                            <th scope="col">Place</th>
-                        </tr>
-                    </thead>
-                </table class="table">
+            <br>
+            <table class="table">
+                <thead class="table-light">
+                    <tr class="d-flex">
+                        <th scope="col" class="col-3">Title</th>
+                        <th scope="col" class="col-6">Comment</th>
+                        <th scope="col" class="col-3">Place</th>
+                    </tr>
+                </thead>
+            </table class="table">
 
-                <div class="memories-table">
-                    <table class="table">
-                        <tbody>
-                        {% for item in memories %}
-                            <tr>
-                                <td>{{ item.name }}</th>
-                                <td>{{ item.comment }}</td>
-                                <td>{{ item.location}}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>   
-                </div> 
-         
+            <div class="memories-table">
+                <table class="table">
+                    <tbody>
+                    {% for item in memories %}
+                        <tr class="d-flex">
+                            <td class="col-3">{{ item.name }}</th>
+                            <td class="col-6">{{ item.comment }}</td>
+                            <td class="col-3">{{ item.location}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>   
+            </div> 
+            <div class="add-memory">
+                <a href="{% url 'new_memory' %}"><button type="button" class="btn btn-outline-primary">ADD A MEMORY</button></a>
+            </div>
         {% endif %}
-        <div class="add-memory">
-            <a href="{% url 'new_memory' %}"><button type="button" class="btn btn-outline-primary">ADD A MEMORY</button></a>
-        </div>
     </div>
     {% else %}      
         <div class="card text-center index">
