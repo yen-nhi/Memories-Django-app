@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  reverseproxy:
+    build: nginx
+    ports:
+      - "443:443" 
+      - "80:80" 
+    restart: always
+  django:
+    build: 
+      context: ..
+      dockerfile: tools/django/Dockerfile
+    environment: 
+      - SECRET_KEY
+      - SOCIAL_AUTH_FACEBOOK_KEY
+      - SOCIAL_AUTH_FACEBOOK_SECRET
+    ports:
+      - 8000:8000
